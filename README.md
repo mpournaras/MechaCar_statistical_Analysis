@@ -33,7 +33,7 @@ This challenge consists of three technical analysis deliverables and a proposal 
 
 The `MechaCar_mpg.csv` dataset contains mpg test results for 50 prototype MechaCars. The MechaCar prototypes were produced using multiple design specifications to identify ideal vehicle performance. Multiple metrics, such as vehicle length, vehicle weight, spoiler angle, drivetrain, and ground clearance, were collected for each vehicle. Using R, I will design a linear model that predicts the mpg of MechaCar prototypes using several variables from the `MechaCar_mpg.csv file`.  
 
-### Deliverable:
+### Deliverables:
 
 - The `MechaCar_mpg.csv` file is imported and read into a dataframe
 - An RScript is written for a linear regression model to be performed on all six variables
@@ -62,64 +62,43 @@ the **vehicle weight**, **spoiler angle**, and **All Wheel Drive (AWD)** have p-
 
 2. The p-Value for this model, 5.35e-11, is considerably smaller than the assumed significance level of 0.05. This indicates there is sufficient evidence to **reject our null hypothesis**, which further shows that the slope of this linear model is **not zero**.
 
-3.  This linear model has a r-squared value of ** 0.7149**, which means that roughly 71% of all mpg predictions will be determined by this model. This multiple regression model **does effectively predict** the MPG of the MechaCar prototype. Further, with the adjusted r-squared value only being .032 less at a value of **.0683** we can infer that our model is not over-fit.
+3.  This linear model has a r-squared value of **0.7149**, which means that roughly 71% of all mpg predictions will be determined by this model. This multiple regression model **does effectively predict** the MPG of the MechaCar prototype. Further, with the adjusted r-squared value only being .032 less at a value of **.0683** we can infer that our model is not over-fit.
 
 
 # Deliverable 2:  
 ## Summary Statistics on Suspension Coils
-### Deliverable Requirements:
+### Requirements:
 
-The MechaCar Suspension_Coil.csv dataset contains the results from multiple production lots. In this dataset, the weight capacities of multiple suspension coils were tested to determine if the manufacturing process is consistent across production lots. Using your knowledge of R, you’ll create a summary statistics table to show:
+The MechaCar Suspension_Coil.csv dataset contains the results from multiple production lots. In this dataset, the weight capacities of multiple suspension coils were tested to determine if the manufacturing process is consistent across production lots. Using my knowledge of R, I will create a summary statistics table to show:
 
 - The suspension coil’s PSI continuous variable across all manufacturing lots
 - The following PSI metrics for each lot: mean, median, variance, and standard deviation.
 
-#### Technical Analysis
-1. Download the `Suspension_Coil.csv` file, and place it in the active directory for your R session.
-2. In your `MechaCarChallenge.RScript`, import and read in the `Suspension_Coil.csv` file as a table.
-3. Write an RScript that creates a `total_summary` dataframe using the `summarize()` function to get the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
-
-Your `total_summary` dataframe should look like this:
-
-![d1](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/data-15-total-summary-data-mean-median-variance-sd.png)
-
-4. Write an RScript that creates a `lot_summary` dataframe using the `group_by()` and the `summarize()` functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
-Your lot_summary dataframe should look like this:
-
-![d1](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/data-15-manufacturing-lot.png)
-
-5. Save your `MechaCarChallenge.RScript` file to your GitHub repository.
-
-> To Deliver. 
-
-You will earn a perfect score for Deliverable 2 by completing all requirements below:
+### Deliverables:
 
 - The Suspension_Coil.csv file is imported and read into a dataframe
 - An RScript is written to create a total summary dataframe that has the mean, median, variance, and standard deviation of the PSI for all manufacturing lots
 - An RScript is written to create a lot summary dataframe that has the mean, median, variance, and standard deviation for each manufacturing lot
 - There is a summary that addresses the design specification requirement for all the manufacturing lots and each lot individually
 
-The Suspension Coil dataset provided for the MechaCar contains the results of testing the weight capacities of multiple suspension coils from multiple production lots to determine consistency. 
 
-First looking at all manufacturing lots:
+### Results:
 
-![d2](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/total_lot_summary.png)
+First, a summary of all coil lots:
 
-Diving a little deeper into each of the 3 lots:
+![d2](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_totalsummary.png)
 
-![d2](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/manufactoring_lot_summary.png)
+Digging a little more into each of the 3 lots:
 
-With the understanding that the design specifications for the MechaCar suspension coils mandate that <mark style="background-color: Yellow">**the variance of the suspension coils cannot exceed 100 pounds per square inch (PSI)**</mark> . 
+![d2](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_lot_summary.png)
 
-Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
+Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Understanding that the design specifications for the MechaCar suspension coils mandate that **the variance of the suspension coils cannot exceed 100 pounds per square inch (PSI)**.
 
-When looking at the entire population of the production lot, the variance of the coils is 62.29 PSI, which is well within the 100 PSI variance requirement.  
+* The enitre population of the 3 lots **is within specification** with a variance of **62.3 PSI**, well within the 100 PSI mandated variance.  
+* When broken down by lot, the results change a little bit! It is important to note that while the mean and median PSI are quite similar between the lots, **lot 3 has a variance of 170 PSI**. That is 70% over the mandated range specification. Production issues can be narroed down to that single lot. The box plot below elegantly shows the wild variation in lot 3 compared to lots 1 and 2.
 
-Similarly, but significantly more consistent, Lot 1 and Lot 2 are well within the 100 PSI variance requirement; with variances of 0.98 and 7.47 respectively.  However, it is Lot 3 that is showing much larger variance in performance and consistency, with a variance of 170.29.  It is Lot 3 that is disproportionately causing the variance at the full lot level.  
+![d2](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_lot_plot.png?raw=true)
 
-This very simple boxplot illustrates the differences between the lots:
-
-![d2](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/boxplot2.png)
 
 # Deliverable 3:  
 ## t-Tests on Suspension Coils
