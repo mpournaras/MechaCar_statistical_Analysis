@@ -57,7 +57,7 @@ The `MechaCar_mpg.csv` dataset contains mpg test results for 50 prototype MechaC
 
 From the above output we can see that:
 
-1. The **vehicle length**, and **vehicle ground clearance** are statistically unlikely to provide random amounts of variance to the model. In otherwords, the vehicle length and vehicle ground clearance have a significant impact on miles-per-gallon on the MechaCar prototype. On the other hand,
+1. The **vehicle length**, and **vehicle ground clearance** are statistically unlikely to provide random amounts of variance to the model. In other words, the vehicle length and vehicle ground clearance have a significant impact on miles-per-gallon on the MechaCar prototype. On the other hand,
 the **vehicle weight**, **spoiler angle**, and **All Wheel Drive (AWD)** have p-Values that indicate they provide a random amount of variance to the model.  
 
 2. The p-Value for this model, 5.35e-11, is considerably smaller than the assumed significance level of 0.05. This indicates there is sufficient evidence to **reject our null hypothesis**, which further shows that the slope of this linear model is **not zero**.
@@ -94,8 +94,8 @@ Digging a little more into each of the 3 lots:
 
 Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Understanding that the design specifications for the MechaCar suspension coils mandate that **the variance of the suspension coils cannot exceed 100 pounds per square inch (PSI)**.
 
-* The enitre population of the 3 lots **is within specification** with a variance of **62.3 PSI**, well within the 100 PSI mandated variance.  
-* When broken down by lot, the results change a little bit! It is important to note that while the mean and median PSI are quite similar between the lots, **lot 3 has a variance of 170 PSI**. That is 70% over the mandated range specification. Production issues can be narroed down to that single lot. The box plot below elegantly shows the wild variation in lot 3 compared to lots 1 and 2.
+* The entire population of the 3 lots **is within specification** with a variance of **62.3 PSI**, well within the 100 PSI mandated variance.  
+* When broken down by lot, the results change a little bit! It is important to note that while the mean and median PSI are quite similar between the lots, **lot 3 has a variance of 170 PSI**. That is 70% over the mandated range specification. Production issues can be narrowed down to that single lot. The box plot below elegantly shows the wild variation in lot 3 compared to lots 1 and 2.
 
 ![d2](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_lot_plot.png?raw=true)
 
@@ -115,7 +115,7 @@ Using my knowledge of R, I need to perform t-tests to determine if all manufactu
 ### Results
 The next step is to conduct a t-test on the suspension coil data to determine whether there is a statistical difference between the mean of this provided sample dataset and a hypothesized, potential population dataset. Using the presumed population mean of **1500 PSI**, we conclude the following:
 
-* First lets look at the t-test results across all manufacturing lots:
+* First let's look at the t-test results across all manufacturing lots:
 
 ![d3](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_t-test_all_lots.png)
 
@@ -125,7 +125,7 @@ From this test we can conclude the **true mean of the sample is 1498.78 PSI**, w
 
 ![d3](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_t-test_individual_lots.png)
 
-1) Lot 1: The sample actually has the **true sample mean of 1500 PSI**. With a **p-Value of 1.0**, we absolutley cannot reject the null hypothesis with the evidence provided.
+1) Lot 1: The sample actually has the **true sample mean of 1500 PSI**. With a **p-Value of 1.0**, we absolutely cannot reject the null hypothesis with the evidence provided.
 2) Lot 2 has a similar outcome with a **sample mean of 1500.02 PSI**. With a **p-Value of 0.61**, we once again do not have sufficient evidence to reject the null hypothesis, and the sample mean and the population mean of 1500 are statistically similar.
 3) Lot 3, not surprisingly, is a different scenario. Here **the sample mean is 1496.14** and the **p-Value is 0.04**, which is lower than the common significance level of 0.05. This evidence indicates we **can reject the null hypothesis** that there is no statistical difference between this sample mean and the presumed population mean.
 
@@ -162,7 +162,7 @@ Collecting data for comparable models across all major manufacturers for past 3 
 *  Passenger Volume: **Independent Variable**
 *  MSRP: **Independent Variable**
 *  Resale Value: **Independent Variable**
-*  Units Sold/ Year: **Dependendent Variable**
+*  Units Sold/ Year: **Dependent Variable**
 
 
 #### Hypothesis: Null and Alternative
