@@ -102,40 +102,42 @@ Does the current manufacturing data meet this design specification for all manuf
 
 # Deliverable 3:  
 ## t-Tests on Suspension Coils
-### Deliverable Requirements:
+### Requirements:
 
-Using your knowledge of R, perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.
+Using my knowledge of R, I need to perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.
 
-#### Technical Analysis
-1. In your `MechaCarChallenge.RScript`, write an RScript using the `t.test()` function to determine if the PSI across all manufacturing lots is statistically different from the population mean of 1,500 pounds per square inch.
-2. Next, write three more RScripts in your `MechaCarChallenge.RScript` using the `t.test()` function and its `subset()` argument to determine if the PSI for each manufacturing lot is statistically different from the population mean of 1,500 pounds per square inch.
+### Deliverables
 
 - An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population
 - An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population
 - There is a summary of the t-test results across all manufacturing lots and for each lot
 
-The next step is to conduct a t-test on the suspension coil data to determine whether there is a statistical difference between the mean of this provided sample dataset and a hypothesized, potential population dataset. Using the presumed **population mean of 1500**, we find the following:
+### Results
+The next step is to conduct a t-test on the suspension coil data to determine whether there is a statistical difference between the mean of this provided sample dataset and a hypothesized, potential population dataset. Using the presumed population mean of **1500 PSI**, we conclude the following:
 
-There is a summary of the t-test results across **all manufacturing lots**
-![d3](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/t_test_all.png)
+* First lets look at the t-test results across all manufacturing lots:
 
-From here we can see the **true mean of the sample is 1498.78**, which we also saw in the summary statistics above.  With a **p-Value of 0.06**, which is higher than the common significance level of 0.05, there is **NOT enough evidence to support rejecting the null hypothesis**.  That is to say, the mean of all three of these manufacturing lots is statistically similar to the presumed population mean of 1500. 
+![d3](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_t-test_all_lots.png)
 
-**Next looking at each individual lots:**
+From this test we can conclude the **true mean of the sample is 1498.78 PSI**, which we also saw in the summary statistics in Deliverable 2.  With a **p-Value of 0.06**, slightly above the accepted significance level of 0.05, there is **not quite enough evidence to reject the null hypothesis**.  In other words, the mean PSI of all three of these manufacturing lots combined is statistically similar to the presumed population mean of 1500 PSI. 
 
-1. Lot 1 sample actually has the **true sample mean of 1500**, again as we saw in the summary statistics above. With a **p-Value of 1**, clearly we cannot reject (i.e. accept) the null hypothesis that there is no statistical difference between the observed sample mean and the presumed population mean (1500).
-2. Lot 2 has essentially the same outcome with a **sample mean of 1500.02**, a **p-Value of 0.61**; the null hypothesis cannot be rejected, and the sample mean and the population mean of 1500 are statistically similar.
-3. However, Lot 3, not surprisingly is a different scenario. Here **the sample mean is 1496.14** and the **p-Value is 0.04**, which is lower than the common significance level of 0.05.  All indicating to **reject the null hypothesis** that this sample mean and the presumed population mean are not statistically different.
+* Let's take a look at the 3 individual lots:
 
- ![d3](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/t_test_lot.png)
+![d3](https://github.com/mpournaras/MechaCar_statistical_Analysis/blob/main/Resources/mecha_coil_t-test_individual_lots.png)
 
-How does this information help?  Clearly, something went awry in Lot 3's production cycle. The process needs to be checked for system fails and the suspension coils from this lot need to be inspected to remove those not meeting quality criteria.
+1) Lot 1: The sample actually has the **true sample mean of 1500 PSI**. With a **p-Value of 1.0**, we absolutley cannot reject the null hypothesis with the evidence provided.
+2) Lot 2 has a similar outcome with a **sample mean of 1500.02 PSI**. With a **p-Value of 0.61**, we once again do not have sufficient evidence to reject the null hypothesis, and the sample mean and the population mean of 1500 are statistically similar.
+3) Lot 3, not surprisingly, is a different scenario. Here **the sample mean is 1496.14** and the **p-Value is 0.04**, which is lower than the common significance level of 0.05. This evidence indicates we **can reject the null hypothesis** that there is no statistical difference between this sample mean and the presumed population mean.
+
+Once again, the data indicates something went awry in the production of coils in lot 3.
 
 # Deliverable 4:  
 ## Study Design: MechaCar vs Competition
-### Deliverable Requirements:
+### Requirements:
 
-Using your knowledge of R, design a statistical study to compare performance of the MechaCar vehicles against performance of vehicles from other manufacturers.
+Using my knowledge of R, design a statistical study to compare performance of the MechaCar vehicles against the performance of vehicles from other manufacturers.
+
+### Deliverables:
 
 The statistical study design has the following:
 - A metric to be tested is mentioned
@@ -143,34 +145,35 @@ The statistical study design has the following:
 - A statistical test is described to test the hypothesis
 
 
-This study would involve collecting data on MechaCar and its comparable models across several different manufacturers over the last 3 years.
+### The Study:
 
+**Data:** This study would involve collecting data on MechaCar and its comparable models across several different manufacturers over the last 3 years.
 * What are the competitions' comparable models, 
 * Which cars will MechaCar be competing with head-to-head? which cars will be included in the study?
 * Which factors will look at the study to determine the relevant to selling price?
  
 
-#### Metrics
+**Metrics:**
 Collecting data for comparable models across all major manufacturers for past 3 years for the following metrics:
 
-*  Safety Feature Rating: **Independent Variable**
-*  Current Price (Selling): **Dependent Variable**
-*  Drive Package : **Independent Variable**
-*  Engine (Electric, Hybrid, Gasoline / Conventional): **Independent Variable**
-*  Resale Value: **Independent Variable**
-*  Average Annual Cost of ownership (Maintenance): **Independent Variable**
+*  Safety Rating: **Independent Variable**
 *  MPG (Gasoline Efficiency): **Independent Variable**
+*  Cargo Volume: **Independent Variable**
+*  Passenger Volume: **Independent Variable**
+*  MSRP: **Independent Variable**
+*  Resale Value: **Independent Variable**
+*  Units Sold/ Year: **Dependendent Variable**
 
 
 #### Hypothesis: Null and Alternative
-After determining which factors are key for the MechaCar's genre:
+After determining which factors are key for the MechaCar's sales:
 
- * Null Hypothesis (Ho): MechaCar is priced correctly based on its performance of key factors for its genre.
- * Alternative Hypothesis (Ha): MechaCar is NOT priced correctly based on performance of key factors for its genre.
+ * Null Hypothesis (Ho): Sales of cars similar to MechaCar are based on cargo and passenger volume.
+ * Alternative Hypothesis (Ha): Sales of cars similar to MechaCar are NOT based on cargo and passenger volume.
  
 #### Statistical Tests
-A **multiple linear regression** would be used to determine the factors that have the highest correlation/predictability with the list selling price (dependent variable); which combination has the greatest impact on price (it may be all of them!)
+A **multiple linear regression** would be used to determine the factors that have the highest correlation/predictability with the units sold per year (dependent variable); which combination has the greatest impact on sales (it may be all of them!)
 
 
 
-##### MechaCar Analysis - AutosRUs Completed by Emmanuel Martinez
+##### Michael Pournaras
